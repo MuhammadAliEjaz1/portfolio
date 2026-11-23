@@ -17,7 +17,7 @@ export default function Contact() {
 
   async function onSubmit(e) {
     e.preventDefault()
-    const key = import.meta.env.VITE_WEB3FORMS_KEY
+    const key = import.meta.env.WEB3FORMS_KEY
     if (!key) return setStatus('nokey')
     const form = e.target
     const fd = new FormData(form)
