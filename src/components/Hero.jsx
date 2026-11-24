@@ -67,7 +67,7 @@ export default function Hero() {
             I work on <Rotator />.
           </p>
           <p className="rise mt-3 max-w-xl leading-relaxed text-muted" style={{ animationDelay: '0.36s' }}>
-            Final-year Data Science student at IUB Bahawalpur, focused on agriculture and public health in Pakistan.
+            Final-year Data Science student at IUB Bahawalpur. I build ML and AI systems, and my projects already span agriculture, healthcare, manufacturing, e-commerce and disaster risk.
           </p>
           <div className="rise mt-7 flex flex-wrap gap-3" style={{ animationDelay: '0.48s' }}>
             <a href="#projects" className="rounded-full bg-brand px-6 py-3 font-semibold text-on-brand">

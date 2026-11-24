@@ -10,7 +10,7 @@ export default function About() {
             I am Muhammad Ali Ejaz, a final-year BS Data Science student at The Islamia University of Bahawalpur, working toward a career as an ML/AI engineer.
           </p>
           <p>
-            I like projects that get deployed and used, not only trained in a notebook. I am most interested in AI tools with real impact in Pakistan, especially in agriculture and public health.
+            I like projects that get deployed and used, not only trained in a notebook. I have built AI tools for farming, healthcare, industry and e-commerce, and I have a special interest in work that helps people in Pakistan.
           </p>
           <p>
             I report results honestly, including when a model does not beat a simple baseline. You will find those limits written in every README.
