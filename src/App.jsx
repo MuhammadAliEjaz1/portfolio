@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx'
 import FeaturedProjects from './components/FeaturedProjects.jsx'
 import AllProjects from './components/AllProjects.jsx'
 import Services from './components/Services.jsx'
+import HowIWork from './components/HowIWork.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -17,6 +18,7 @@ export default function App() {
         <Reveal><FeaturedProjects /></Reveal>
         <Reveal><AllProjects /></Reveal>
         <Reveal><Services /></Reveal>
+        <Reveal><HowIWork /></Reveal>
         <Reveal><About /></Reveal>
         <Reveal><Contact /></Reveal>
       </main>

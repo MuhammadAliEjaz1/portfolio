@@ -57,6 +57,16 @@ export default function Hero() {
     <section id="top" className="mx-auto max-w-5xl px-5 pb-14 pt-10 sm:pb-20 sm:pt-16">
       <div className="grid items-center gap-8 md:grid-cols-[1.25fr_1fr] md:gap-12">
         <div className="order-2 md:order-1">
+          <a
+            href="#contact"
+            className="rise mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-[#1a8f4c] opacity-60" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1a8f4c]" />
+            </span>
+            Available for remote projects and ML/AI roles
+          </a>
           <h1 className="rise font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Muhammad Ali Ejaz
           </h1>
