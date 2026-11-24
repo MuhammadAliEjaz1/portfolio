@@ -31,13 +31,13 @@ function Rotator() {
 
 function Photo() {
   const [failed, setFailed] = useState(false)
-  const size = 'aspect-[4/5] w-40 sm:w-56 md:w-72'
+  const size = 'aspect-[4/5] w-28 sm:w-44 md:w-72'
 
   return (
     <div className={`relative ${size}`}>
       <div aria-hidden="true" className="glow absolute -inset-6 -z-10 rounded-full bg-accent/25 blur-3xl" />
       {failed ? (
-        <div className={`grid place-items-center rounded-3xl border border-line bg-brand font-display text-6xl font-extrabold text-on-brand ${size}`}>
+        <div className={`grid place-items-center rounded-2xl border border-line bg-brand font-display text-4xl font-extrabold md:rounded-3xl md:text-6xl text-on-brand ${size}`}>
           AE
         </div>
       ) : (
@@ -45,7 +45,7 @@ function Photo() {
           src="/ali.jpg"
           alt="Muhammad Ali Ejaz"
           onError={() => setFailed(true)}
-          className={`rounded-3xl border border-line object-cover shadow-xl ${size}`}
+          className={`rounded-2xl border border-line object-cover shadow-xl md:rounded-3xl ${size}`}
         />
       )}
     </div>
@@ -54,23 +54,37 @@ function Photo() {
 
 export default function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-5xl px-5 pb-14 pt-10 sm:pb-20 sm:pt-16">
-      <div className="grid items-center gap-8 md:grid-cols-[1.25fr_1fr] md:gap-12">
-        <div className="order-2 md:order-1">
-          <a
-            href="#contact"
-            className="rise mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-[#1a8f4c] opacity-60" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1a8f4c]" />
-            </span>
-            Available for remote projects and ML/AI roles
-          </a>
-          <h1 className="rise font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            Muhammad Ali Ejaz
-          </h1>
-          <p className="rise mt-5 max-w-xl text-xl font-semibold leading-snug sm:text-2xl" style={{ animationDelay: '0.12s' }}>
+    <section id="top" className="mx-auto max-w-5xl px-5 pb-14 pt-8 sm:pb-20 sm:pt-16">
+      <div className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-5 md:grid-cols-[1.25fr_1fr] md:gap-x-12">
+        <a
+          href="#contact"
+          className="rise col-span-2 col-start-1 row-start-1 inline-flex items-center gap-2 justify-self-start rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium md:col-span-1"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-[#1a8f4c] opacity-60" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#1a8f4c]" />
+          </span>
+          <span className="sm:hidden">Available for remote work</span>
+          <span className="hidden sm:inline">Available for remote projects and ML/AI roles</span>
+        </a>
+
+        <h1
+          className="rise col-start-1 row-start-2 font-display text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+          style={{ animationDelay: '0.08s' }}
+        >
+          <span className="block">Muhammad</span>
+          <span className="block">Ali Ejaz</span>
+        </h1>
+
+        <div
+          className="rise col-start-2 row-start-2 md:row-span-3 md:row-start-1 md:justify-self-center"
+          style={{ animationDelay: '0.2s' }}
+        >
+          <Photo />
+        </div>
+
+        <div className="col-span-2 col-start-1 row-start-3 md:col-span-1">
+          <p className="rise max-w-xl text-xl font-semibold leading-snug sm:text-2xl" style={{ animationDelay: '0.12s' }}>
             ML/AI engineer who builds and deploys AI systems for real-world problems.
           </p>
           <p className="rise mt-4 text-lg text-muted" style={{ animationDelay: '0.24s' }}>
@@ -79,7 +93,7 @@ export default function Hero() {
           <p className="rise mt-3 max-w-xl leading-relaxed text-muted" style={{ animationDelay: '0.36s' }}>
             Final-year Data Science student at IUB Bahawalpur. I build ML and AI systems, and my projects already span agriculture, healthcare, manufacturing, e-commerce and disaster risk.
           </p>
-          <div className="rise mt-7 flex flex-wrap gap-3" style={{ animationDelay: '0.48s' }}>
+          <div className="rise mt-6 flex flex-wrap gap-3" style={{ animationDelay: '0.48s' }}>
             <a href="#projects" className="rounded-full bg-brand px-6 py-3 font-semibold text-on-brand">
               View projects
             </a>
@@ -87,10 +101,6 @@ export default function Hero() {
               Contact me
             </a>
           </div>
-        </div>
-
-        <div className="rise order-1 md:order-2 md:justify-self-center" style={{ animationDelay: '0.2s' }}>
-          <Photo />
         </div>
       </div>
 
