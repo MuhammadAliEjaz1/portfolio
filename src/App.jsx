@@ -6,6 +6,7 @@ import Services from './components/Services.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import Reveal from './components/Reveal.jsx'
 
 export default function App() {
   return (
@@ -13,11 +14,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <FeaturedProjects />
-        <AllProjects />
-        <Services />
-        <About />
-        <Contact />
+        <Reveal><FeaturedProjects /></Reveal>
+        <Reveal><AllProjects /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </>

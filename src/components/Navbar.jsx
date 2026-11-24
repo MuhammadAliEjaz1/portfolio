@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const links = [
   ['Projects', '#projects'],
@@ -9,6 +9,14 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
 
   function toggleTheme() {
@@ -21,11 +29,12 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-bg/90 backdrop-blur">
+    <header className={`sticky top-0 z-20 border-b border-line bg-bg/90 backdrop-blur transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
       <nav className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3" aria-label="Main">
         <a href="#top" className="flex items-center gap-3 font-display font-bold">
           <span className="grid h-9 w-9 place-items-center rounded-full bg-brand text-sm text-on-brand">AE</span>
-          <span className="hidden sm:inline">Muhammad Ali Ejaz</span>
+          <span className="text-lg sm:hidden">Ali Ejaz</span>
+          <span className="hidden text-lg sm:inline">Muhammad Ali Ejaz</span>
         </a>
 
         <ul className="hidden items-center gap-6 md:flex">

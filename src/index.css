@@ -54,3 +54,50 @@ section[id] { scroll-margin-top: 5rem; }
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ---------- Effects ---------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes floatGlow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.06); }
+}
+
+.rise { animation: rise 0.7s ease both; }
+.word-in { animation: wordIn 0.45s ease both; }
+.glow { animation: floatGlow 7s ease-in-out infinite; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* Cards lift on hover (mouse devices only) */
+#projects article,
+#all-projects > ul > li,
+#services > div > ul > li {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+@media (hover: hover) {
+  #projects article:hover,
+  #all-projects > ul > li:hover,
+  #services > div > ul > li:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 30px -14px rgba(20, 35, 63, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .word-in, .glow { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  #projects article, #all-projects > ul > li, #services > div > ul > li { transition: none; }
+}
